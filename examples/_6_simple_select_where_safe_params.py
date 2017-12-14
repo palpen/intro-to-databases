@@ -6,7 +6,7 @@ db = sqlite3.connect('library_simple.db')
 query = "SELECT * FROM author WHERE country_id = :country_id"
 
 params = {
-    'country_id': 1  # Try the SQL Injection
+    'country_id': "1"  # Try the SQL Injection
 }
 
 cursor = db.execute(query, params)

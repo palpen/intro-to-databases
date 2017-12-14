@@ -4,9 +4,16 @@ db = sqlite3.connect('library_simple.db')
 db.row_factory = sqlite3.Row
 
 # American Authors
+# how do these aliases work? what's the point of the aliases
+# following SELECT?
 query = """
-SELECT a.id as id, a.name as name, c.name as country
-FROM author a INNER JOIN country c ON a.country_id = c.id;
+SELECT
+    a.id as id, a.name as name, c.name as country
+FROM
+    author a
+INNER JOIN
+    country c
+ON a.country_id = c.id;
 """
 
 

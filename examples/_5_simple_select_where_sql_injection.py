@@ -5,6 +5,7 @@ db = sqlite3.connect('library_simple.db')
 # American Authors
 query = "SELECT * FROM author WHERE country_id = %s"
 
+# dumps all data because 1 == 1 always true
 country_id = "1 or 1 == 1"  # We're getting this from an untrusted source
 
 cursor = db.execute(query % country_id)
